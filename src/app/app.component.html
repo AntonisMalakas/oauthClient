@@ -1,0 +1,51 @@
+<!-- <div class="login-page">
+  <div class="form">
+    <div class="register-form">
+      <input type="text" [(ngModel)]="userName" placeholder="name" />
+      <input type="password" [(ngModel)]="password" placeholder="password" />
+      <input type="text" placeholder="email address" />
+      <button>create</button>
+      <p class="message">Already registered?
+        <a href="#" (click)='showCreateAccount()'>Sign In</a>
+      </p>
+    </div>
+    <div class="login-form">
+      <input type="text" [(ngModel)]="userName" placeholder="username" />
+      <input type="password" [(ngModel)]="password" placeholder="password" />
+      <button type="button" (click)='login()'>login</button>
+      <p class="message">Not registered?
+        <a href="#" (click)='showCreateAccount()'>Create an account</a>
+      </p>
+    </div>
+  </div>
+</div> -->
+
+<div class="login-page">
+  <div class="form">
+
+    <div *ngIf='!showLoginForm'>
+      <div class="login-form">
+        <input type="text" [(ngModel)]="fName" placeholder="First Name" />
+        <input type="text" [(ngModel)]="lName" placeholder="Last Name" />
+        <input type="text" [(ngModel)]="username" placeholder="username" />
+        <input type="password" [(ngModel)]="password" placeholder="password" />
+        <button type="button" (click)='register()'>Register</button>
+        <p class="message">Already registered?
+          <a href="#" (click)='showCreateAccount()'>Sign In</a>
+        </p>
+      </div>
+    </div>
+
+    <div *ngIf='showLoginForm'>
+      <div class="login-form">
+        <input type="text" [(ngModel)]="username" placeholder="username" />
+        <input type="password" [(ngModel)]="password" placeholder="password" />
+        <button type="button" (click)='login()'>login</button>
+        <p class="message">Not registered?
+          <a href="#" (click)='showCreateAccount()'>Create an account</a>
+        </p>
+      </div>
+    </div>
+
+  </div>
+</div>
